@@ -1,0 +1,372 @@
+### Health Check
+GET http://localhost:8080/api/v1/health
+
+### =========================================================================
+### 1. LIVE CLASSES CRUD
+### =========================================================================
+
+### Crear Clase en Directo
+POST http://localhost:8080/api/v1/live-classes
+Content-Type: application/json
+
+{
+  "liveName": "Conexión Cuántica y Meditación en Vivo",
+  "liveUrl": "https://zoom.us/j/123456789"
+}
+
+### Obtener todas las Clases
+GET http://localhost:8080/api/v1/live-classes
+
+### Obtener Clase por ID
+GET http://localhost:8080/api/v1/live-classes/1
+
+### Actualizar Clase
+PUT http://localhost:8080/api/v1/live-classes/1
+Content-Type: application/json
+
+{
+  "liveName": "Conexión Cuántica - Sesión Especial",
+  "liveUrl": "https://youtube.com/live/ejemplo123"
+}
+
+### Eliminar Clase
+DELETE http://localhost:8080/api/v1/live-classes/1
+
+### =========================================================================
+### 2. GUIDED MEDITATIONS CRUD
+### =========================================================================
+
+### Crear Meditación Guiada
+POST http://localhost:8080/api/v1/guided-meditations
+Content-Type: application/json
+
+{
+  "meditationName": "Meditación para la Calma y Gratitud",
+  "meditationUrlVideo": "https://youtube.com/watch?v=meditacion1",
+  "meditationDescription": "Sesión guiada de 20 minutos enfocada en la respiración consciente y activación del centro cardíaco.",
+  "meditationAvailablePlatforms": {
+    "Spotify": "https://open.spotify.com/episode/meditacion1",
+    "AppleMusic": "https://music.apple.com/album/meditacion1",
+    "YouTube": "https://youtube.com/watch?v=meditacion1"
+  }
+}
+
+### Obtener todas las Meditaciones
+GET http://localhost:8080/api/v1/guided-meditations
+
+### Obtener Meditación por ID
+GET http://localhost:8080/api/v1/guided-meditations/1
+
+### Actualizar Meditación
+PUT http://localhost:8080/api/v1/guided-meditations/1
+Content-Type: application/json
+
+{
+  "meditationName": "Meditación para la Calma Profunda",
+  "meditationUrlVideo": "https://youtube.com/watch?v=meditacion-editada",
+  "meditationDescription": "Versión remasterizada con frecuencias binaurales.",
+  "meditationAvailablePlatforms": {
+    "Spotify": "https://open.spotify.com/episode/nueva-url",
+    "InsightTimer": "https://insighttimer.com/meditacion1"
+  }
+}
+
+### Eliminar Meditación
+DELETE http://localhost:8080/api/v1/guided-meditations/1
+
+### =========================================================================
+### 3. MUSIC CRUD
+### =========================================================================
+
+### Crear Canción / Audio
+POST http://localhost:8080/api/v1/music
+Content-Type: application/json
+
+{
+  "musicNameSong": "Frecuencia 432Hz - Armonía Solar",
+  "musicDescription": "Composición instrumental para estados meditativos profundos.",
+  "musicVideoUrl": "https://youtube.com/watch?v=musica432hz",
+  "musicAvailablePlatforms": {
+    "Spotify": "https://open.spotify.com/track/musica1",
+    "AmazonMusic": "https://music.amazon.com/albums/musica1"
+  }
+}
+
+### Obtener toda la Música
+GET http://localhost:8080/api/v1/music
+
+### Obtener Canción por ID
+GET http://localhost:8080/api/v1/music/1
+
+### Actualizar Canción
+PUT http://localhost:8080/api/v1/music/1
+Content-Type: application/json
+
+{
+  "musicNameSong": "Frecuencia 528Hz - Transformación y Milagros",
+  "musicDescription": "Frecuencia del amor y reparación bioenergética.",
+  "musicVideoUrl": "https://youtube.com/watch?v=musica528hz",
+  "musicAvailablePlatforms": {
+    "Spotify": "https://open.spotify.com/track/musica528",
+    "AppleMusic": "https://music.apple.com/track/musica528"
+  }
+}
+
+### Eliminar Canción
+DELETE http://localhost:8080/api/v1/music/1
+
+### =========================================================================
+### 4. BOOKS CRUD
+### =========================================================================
+
+### Crear Libro
+POST http://localhost:8080/api/v1/books
+Content-Type: application/json
+
+{
+  "bookName": "El Despertar del Ser",
+  "bookImage": "https://miservidor.com/portadas/el-despertar.jpg",
+  "bookDescription": "Guía práctica de autoconocimiento y expansión de conciencia.",
+  "autor": "Mikael",
+  "bookAvailableShopPlatforms": {
+    "Amazon": "https://amazon.com/dp/B00EJEMPLO",
+    "BuscaLibre": "https://buscalibre.com/libro-ejemplo"
+  }
+}
+
+### Obtener todos los Libros
+GET http://localhost:8080/api/v1/books
+
+### Obtener Libro por ID
+GET http://localhost:8080/api/v1/books/1
+
+### Actualizar Libro
+PUT http://localhost:8080/api/v1/books/1
+Content-Type: application/json
+
+{
+  "bookName": "El Despertar del Ser (Segunda Edición)",
+  "bookImage": "https://miservidor.com/portadas/el-despertar-2da.jpg",
+  "bookDescription": "Nueva edición ampliada con ejercicios prácticos.",
+  "autor": "Mikael",
+  "bookAvailableShopPlatforms": {
+    "Amazon": "https://amazon.com/dp/B00EJEMPLO-2",
+    "CasaDelLibro": "https://casadellibro.com/libro-ejemplo-2"
+  }
+}
+
+### Eliminar Libro
+DELETE http://localhost:8080/api/v1/books/1
+
+### =========================================================================
+### 5. DOCUMENTS CRUD
+### =========================================================================
+
+### Crear Documento
+POST http://localhost:8080/api/v1/documents
+Content-Type: application/json
+
+{
+  "documentPDF": "https://miservidor.com/docs/guia-respiracion-consciente.pdf",
+  "documentDescription": "Manual descargable en PDF con técnicas de pranayama y respiración diafragmática.",
+  "documentAvailableDownloadPlatforms": {
+    "GoogleDrive": "https://drive.google.com/file/d/ejemplo123/view",
+    "DirectDownload": "https://miservidor.com/downloads/guia.pdf"
+  }
+}
+
+### Obtener todos los Documentos
+GET http://localhost:8080/api/v1/documents
+
+### Obtener Documento por ID
+GET http://localhost:8080/api/v1/documents/1
+
+### Actualizar Documento
+PUT http://localhost:8080/api/v1/documents/1
+Content-Type: application/json
+
+{
+  "documentPDF": "https://miservidor.com/docs/guia-respiracion-v2.pdf",
+  "documentDescription": "Versión 2.0 con tablas de tiempos y gráficos ilustrados.",
+  "documentAvailableDownloadPlatforms": {
+    "GoogleDrive": "https://drive.google.com/file/d/ejemplo-v2/view"
+  }
+}
+
+### Eliminar Documento
+DELETE http://localhost:8080/api/v1/documents/1
+
+### Prueba de Error 404 (ID inexistente)
+GET http://localhost:8080/api/v1/live-classes/9999
+
+### =========================================================================
+### 6. HEALING PROGRAMS & RESERVATIONS CRUD
+### =========================================================================
+
+### Crear Programa de Sanación
+POST http://localhost:8080/api/v1/healing-programs
+Content-Type: application/json
+
+{
+  "healingImage": "https://miservidor.com/img/sanacion-emocional.jpg",
+  "healingDescription": "Programa de 4 semanas de reconexión y sanación de memorias celulares."
+}
+
+### Obtener todos los Programas
+GET http://localhost:8080/api/v1/healing-programs
+
+### Crear Reserva para el Programa 1 (Bidireccional)
+POST http://localhost:8080/api/v1/healing-programs/1/reservations
+Content-Type: application/json
+
+{
+  "patientsFullName": "Ana Sofía Martínez",
+  "patientsPhone": "+57 310 9876543",
+  "patientsMail": "anasofia@example.com",
+  "patientsAddress": "Calle 100 #15-20, Bogotá"
+}
+
+### Obtener Reservas del Programa 1
+GET http://localhost:8080/api/v1/healing-programs/1/reservations
+
+### =========================================================================
+### 7. MEDICINAL PLANTS & RESERVATIONS CRUD
+### =========================================================================
+
+### Crear Planta Medicinal
+POST http://localhost:8080/api/v1/medicinal-plants
+Content-Type: application/json
+
+{
+  "medicinalName": "Moringa Oleífera Silvestre",
+  "medicinalImage": "https://miservidor.com/img/moringa.jpg",
+  "medicinalDescription": "Conocida como el árbol de la vida, rica en antioxidantes y aminoácidos esenciales.",
+  "medicinalPrice": 45000.00,
+  "medicinalSpots": 20
+}
+
+### Obtener todas las Plantas Medicinales
+GET http://localhost:8080/api/v1/medicinal-plants
+
+### Crear Reserva para la Planta 1
+POST http://localhost:8080/api/v1/medicinal-plants/1/reservations
+Content-Type: application/json
+
+{
+  "patientsFullName": "Carlos Eduardo Gómez",
+  "patientsPhone": "+57 320 1234567",
+  "patientsMail": "carlosgomez@example.com",
+  "patientsAddress": "Carrera 45 #80-12, Medellín"
+}
+
+### Obtener Reservas de la Planta 1
+GET http://localhost:8080/api/v1/medicinal-plants/1/reservations
+
+### =========================================================================
+### 8. JOURNEYS & RESERVATIONS CRUD
+### =========================================================================
+
+### Crear Viaje Místico
+POST http://localhost:8080/api/v1/journeys
+Content-Type: application/json
+
+{
+  "journeyName": "Retiro Sagrado en el Valle del Putumayo",
+  "journeyImage": "https://miservidor.com/img/retiro-putumayo.jpg",
+  "journeyDescription": "Experiencia vivencial de 5 días con sabedores ancestrales y contacto pleno con la naturaleza.",
+  "journeyDate": "2026-11-15",
+  "journeyPrice": 1850000.00
+}
+
+### Obtener todos los Viajes
+GET http://localhost:8080/api/v1/journeys
+
+### Crear Reserva para el Viaje 1
+POST http://localhost:8080/api/v1/journeys/1/reservations
+Content-Type: application/json
+
+{
+  "travelersFullName": "Laura Valentina Ríos",
+  "travelersPhone": "+57 301 5558899",
+  "travelersMail": "laurarios@example.com",
+  "travelersAddress": "Avenida Santander #22-30, Manizales"
+}
+
+### Obtener Reservas del Viaje 1
+GET http://localhost:8080/api/v1/journeys/1/reservations
+
+### =========================================================================
+### 9. EVENTS & RESERVATIONS CRUD
+### =========================================================================
+
+### Crear Evento
+POST http://localhost:8080/api/v1/events
+Content-Type: application/json
+
+{
+  "eventImage": "https://miservidor.com/img/evento-solsticio.jpg",
+  "eventDescription": "Encuentro presencial de meditación grupal, círculos de palabra y activación sonora.",
+  "eventDate": "2026-12-21",
+  "eventPrice": 120000.00
+}
+
+### Obtener todos los Eventos
+GET http://localhost:8080/api/v1/events
+
+### Crear Reserva para el Evento 1
+POST http://localhost:8080/api/v1/events/1/reservations
+Content-Type: application/json
+
+{
+  "reservatorFullName": "Daniel Alejandro Torres",
+  "reservatorPhone": "+57 312 4443322",
+  "reservatorMail": "danieltorres@example.com",
+  "reservatorAddress": "Transversal 5 #30-40, Cali"
+}
+
+### Obtener Reservas del Evento 1
+GET http://localhost:8080/api/v1/events/1/reservations
+
+### =========================================================================
+### 10. BLOG ECOSYSTEM CRUD (TopicBlog -> Blog -> CommentBlog)
+### =========================================================================
+
+### Crear Tema de Blog
+POST http://localhost:8080/api/v1/blog-topics
+Content-Type: application/json
+
+{
+  "topicName": "Despertar de Conciencia"
+}
+
+### Obtener todos los Temas de Blog
+GET http://localhost:8080/api/v1/blog-topics
+
+### Crear Artículo en el Blog asociado al Tema 1
+POST http://localhost:8080/api/v1/blogs?topicId=1
+Content-Type: application/json
+
+{
+  "blogName": "La Ilusión de la Separación y el Poder del Ahora",
+  "blogImage": "https://miservidor.com/img/blog-el-ahora.jpg",
+  "blogText": "Cuando reconocemos que no estamos desconectados del todo, nuestra percepción del tiempo y de la realidad cambia profundamente..."
+}
+
+### Obtener todos los Artículos del Blog
+GET http://localhost:8080/api/v1/blogs
+
+### Obtener Artículos filtrados por Tema 1
+GET http://localhost:8080/api/v1/blogs?topicId=1
+
+### Agregar Comentario al Artículo 1 (Bidireccional)
+POST http://localhost:8080/api/v1/blogs/1/comments
+Content-Type: application/json
+
+{
+  "reviewersfullName": "María Fernanda Vélez",
+  "reviewersMail": "mariafe@example.com",
+  "reviewersComment": "Hermoso artículo, me resonó cada palabra sobre el observador interior."
+}
+
+### Obtener Comentarios del Artículo 1
+GET http://localhost:8080/api/v1/blogs/1/comments
