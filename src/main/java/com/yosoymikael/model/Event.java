@@ -35,6 +35,9 @@ public class Event {
     @Column(name = "event_price", precision = 10, scale = 2)
     private BigDecimal eventPrice;
 
+    @Column(name = "event_details", columnDefinition = "TEXT")
+    private String eventDetails;
+
     @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
     @Builder.Default

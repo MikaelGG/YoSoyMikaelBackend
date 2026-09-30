@@ -1,8 +1,12 @@
 # ===============================================
-# Configuración del Servidor
+# Configuración del Servidor (Optimizado para AWS & Local)
 # ===============================================
 server:
-  port: 8080
+  port: ${PORT:8080}
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+    min-response-size: 1024
 
 # ===============================================
 # Configuración de Spring & Base de Datos
@@ -12,18 +16,24 @@ spring:
     name: YoSoyBackend
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/yosoymikael
-    username: postgres
-    password: 88888888
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/yosoymikael}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:88888888}
     driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: ${DB_POOL_MAX:10}
+      minimum-idle: ${DB_POOL_MIN:2}
+      idle-timeout: 30000
+      connection-timeout: 20000
+      max-lifetime: 1800000
 
   jpa:
     hibernate:
-      ddl-auto: update
-    show-sql: true
+      ddl-auto: ${HIBERNATE_DDL:update}
+    show-sql: ${SHOW_SQL:false}
     properties:
       hibernate:
-        format_sql: true
+        format_sql: false
     open-in-view: false
 
 # ===============================================
@@ -31,5 +41,5 @@ spring:
 # ===============================================
 logging:
   level:
-    org.springframework.web: INFO
-    org.hibernate.SQL: DEBUG
+    org.springframework.web: ${LOG_WEB:INFO}
+    org.hibernate.SQL: ${LOG_SQL:WARN}

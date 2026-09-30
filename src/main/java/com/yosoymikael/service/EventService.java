@@ -38,6 +38,7 @@ public class EventService {
         existing.setEventDescription(details.getEventDescription());
         existing.setEventDate(details.getEventDate());
         existing.setEventPrice(details.getEventPrice());
+        existing.setEventDetails(details.getEventDetails());
         return eventRepository.save(existing);
     }
 

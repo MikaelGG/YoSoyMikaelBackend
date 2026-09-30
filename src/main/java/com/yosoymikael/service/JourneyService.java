@@ -39,6 +39,7 @@ public class JourneyService {
         existing.setJourneyDescription(details.getJourneyDescription());
         existing.setJourneyDate(details.getJourneyDate());
         existing.setJourneyPrice(details.getJourneyPrice());
+        existing.setJourneyDetails(details.getJourneyDetails());
         return existing; // Dirty checking de Hibernate lanza el UPDATE automaticamente
     }
 

@@ -38,6 +38,9 @@ public class Journey {
     @Column(name = "journey_price", precision = 10, scale = 2)
     private BigDecimal journeyPrice;
 
+    @Column(name = "journey_details", columnDefinition = "TEXT")
+    private String journeyDetails;
+
     @OneToMany(mappedBy = "journey", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
     @Builder.Default
